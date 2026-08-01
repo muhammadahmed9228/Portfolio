@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Custom scrollbar and smooth behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0f172a; /* Deep slate dark background */
+  color: #f8fafc;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
