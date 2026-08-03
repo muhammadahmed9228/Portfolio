@@ -56,6 +56,7 @@ const NavbarHome = () => {
             href="{resume}"
             target="_blank"
             rel="noopener noreferrer"
+            download="Muhammad_Ahmed-CV.pdf"
             className="flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
           >
             <FileText className="w-4 h-4" />
