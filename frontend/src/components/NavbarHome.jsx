@@ -53,10 +53,9 @@ const NavbarHome = () => {
 
           {/* Open Resume Button (Works on both Phone & Laptop) */}
           <a
-            href="{resume}"
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
-            download="Muhammad_Ahmed-CV.pdf"
             className="flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
           >
             <FileText className="w-4 h-4" />
@@ -92,8 +91,9 @@ const NavbarHome = () => {
           ))}
           <div className="pt-2 flex items-center gap-3">
             <a
-              href={PROFILE.resumeUrl}
+              href={resume}
               target="_blank"
+              download="Muhammad_Ahmed-CV.pdf"
               rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-emerald-500 text-slate-950 font-bold rounded-xl text-sm"
             >
