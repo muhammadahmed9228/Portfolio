@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { PROFILE } from '../constants/profile';
-import { Code2, Menu, X, FileText, Lock } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import resume from '../../public/Muhammad_Ahmed-CV.pdf'
+import React, { useState } from "react";
+import { PROFILE } from "../constants/profile";
+import { Code2, Menu, X, FileText, Lock } from "lucide-react";
+import { Link } from "react-router-dom";
+import resume from "../../public/Muhammad_Ahmed-CV.pdf";
 
 const NavbarHome = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -41,8 +41,8 @@ const NavbarHome = () => {
           ))}
         </div>
 
-        {/* Actions (Resume & Admin Link) */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="flex items-center gap-3">
+          {/* Admin Link */}
           <Link
             to="/admin/login"
             className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
@@ -51,11 +51,12 @@ const NavbarHome = () => {
             <Lock className="w-4 h-4" />
           </Link>
 
+          {/* Open Resume Button (Works on both Phone & Laptop) */}
           <a
-            href={resume}
+            href="{resume}"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-emerald-500/10 transition-all"
+            className="flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
           >
             <FileText className="w-4 h-4" />
             <span>Resume</span>
@@ -67,7 +68,11 @@ const NavbarHome = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="md:hidden p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
