@@ -39,7 +39,6 @@ import React from 'react';
 import { PROFILE } from '../../../constants/profile';
 import { Code2, Sparkles } from 'lucide-react';
 import profileImg from '../../../../public/profile-photo2.jpg';
-import resume from '../../../../public/Muhammad_Ahmed-CV.pdf'
 
 const ProfileImageCard = () => {
   return (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PROFILE } from '../constants/profile';
 import { Code2, Menu, X, FileText, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import resume from '../../public/Muhammad_Ahmed-CV.pdf'
 
 const NavbarHome = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -51,7 +52,7 @@ const NavbarHome = () => {
           </Link>
 
           <a
-            href={PROFILE.resumeUrl}
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-emerald-500/10 transition-all"
