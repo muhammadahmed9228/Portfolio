@@ -70,6 +70,7 @@ app.use('/api/v1/admin', adminRouter);
 app.use('/api/v1/projects', projectRouter);
 app.use('/api/v1/experiences', experienceRouter);
 app.use('/api/v1/contacts', contactRouter); // Cleaned duplicate route
+app.use('/api/v1/contact', contactRouter);
 
 export default app;
 //mongodb://muhammadahmedzahid2002_db_user:HEuXGpCCAZu0tAU1@ac-sa2plk5-shard-00-00.mbz50fk.mongodb.net:27017,ac-sa2plk5-shard-00-01.mbz50fk.mongodb.net:27017,ac-sa2plk5-shard-00-02.mbz50fk.mongodb.net:27017/?ssl=true&replicaSet=atlas-b0qqxn-shard-0&authSource=admin&appName=Cluster0
