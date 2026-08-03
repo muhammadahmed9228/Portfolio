@@ -38,6 +38,7 @@
 import React from 'react';
 import { PROFILE } from '../../../constants/profile';
 import { Code2, Sparkles } from 'lucide-react';
+import profileImg from '../../../../public/profile-photo2.jpg';
 
 const ProfileImageCard = () => {
   return (
@@ -51,7 +52,7 @@ const ProfileImageCard = () => {
         {/* Photo Container */}
         <div className="relative h-[380px] sm:h-[420px] w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800/80">
           <img
-            src="public/profile-photo2.jpg" // Place your photo inside frontend/public/profile-photo.jpg
+           src={profileImg} // Profile pic
             alt={PROFILE.name}
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
