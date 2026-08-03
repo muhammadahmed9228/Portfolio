@@ -104,11 +104,11 @@ export async function loginUser(req, res) {
 
         const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id);
 
-        const isProduction = process.env.NODE_ENV === 'production';
+        // Always use 'none' and 'true' for cross-domain cookies in deployment
         const options = {
-          httpOnly: true,
-          secure: isProduction,
-          sameSite: isProduction ? 'None' : 'lax'
+            httpOnly: true,
+            secure: true,      // Must be true over HTTPS
+            sameSite: 'none',  // Must be lower-case 'none' for cross-domain Vercel <-> Render
         };
 
         return res
@@ -120,7 +120,7 @@ export async function loginUser(req, res) {
                     _id: user._id,
                     email: user.email,
                 },
-                message: "Login Successfull."
+                message: "Login Successful."
             });
 
     } catch (error) {
