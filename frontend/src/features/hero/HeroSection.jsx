@@ -3,7 +3,7 @@ import { PROFILE } from "../../constants/profile";
 // import TerminalWindow from './components/TerminalWindow';
 import ProfileImageCard from "./components/ProfileImageCard";
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
-
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 const HeroSection = () => {
   return (
     <section id="about" className="relative py-20 lg:py-28 overflow-hidden">
@@ -51,18 +51,25 @@ const HeroSection = () => {
 
             {/* Social Icons Row */}
             <div className="pt-4 flex items-center justify-center lg:justify-start gap-4 text-slate-400">
+             {/* Github */}
               <a
                 href={PROFILE.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 bg-[#0d1824] border border-[#223244] rounded-xl hover:text-white hover:border-[#314558] transition-colors"
-              ></a>
+                className="p-2.5 bg-[#0d1824] border border-[#223244] rounded-xl hover:text-sky-300 hover:border-[#314558] transition-colors"
+              >
+                  <FaGithub size={24} className="w-5 h-5" />
+              </a>
+              {/* Linkedin */}
               <a
                 href={PROFILE.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 bg-[#0d1824] border border-[#223244] rounded-xl hover:text-amber-300 hover:border-[#314558] transition-colors"
-              ></a>
+                className="p-2.5 bg-[#0d1824] border border-[#223244] rounded-xl hover:text-sky-300 hover:border-[#314558] transition-colors"
+              >
+                  <FaLinkedin size={24} className="w-5 h-5" />
+              </a>
+              {/* Email */}
               <a
                 href={`mailto:${PROFILE.email}`}
                 className="p-2.5 bg-[#0d1824] border border-[#223244] rounded-xl hover:text-sky-300 hover:border-[#314558] transition-colors"

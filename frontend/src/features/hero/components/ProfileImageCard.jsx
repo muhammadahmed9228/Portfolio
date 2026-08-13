@@ -78,14 +78,14 @@ const ProfileImageCard = () => {
           </div>
         </div>
 
-        {/* Bottom Tech Pills Row */}
+        {/* Bottom Tech Pills Row
         <div className="mt-3 px-2 py-1 flex items-center justify-between text-xs text-slate-400 font-mono">
           <span className="flex items-center gap-1.5 text-amber-300 font-medium">
             <Sparkles className="w-3.5 h-3.5" />
             MERN Stack
           </span>
           <span>{PROFILE.location}</span>
-        </div>
+        </div> */}
 
       </div>
     </div>
