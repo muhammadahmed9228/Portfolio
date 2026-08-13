@@ -9,12 +9,12 @@ const StatCard = ({ title, value, icon: Icon, color = "emerald" }) => {
   };
 
   return (
-    <div className="p-5 bg-slate-900/60 border border-slate-800 rounded-2xl flex items-center justify-between">
+    <div className="p-5 bg-slate-900/60 border border-slate-800 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div>
         <p className="text-xs font-medium text-slate-400 uppercase tracking-wider">{title}</p>
         <h4 className="text-2xl font-bold text-white mt-1">{value}</h4>
       </div>
-      <div className={`p-3 rounded-xl border ${colorMap[color] || colorMap.emerald}`}>
+      <div className={`p-3 rounded-xl border self-end sm:self-auto ${colorMap[color] || colorMap.emerald}`}>
         <Icon className="w-6 h-6" />
       </div>
     </div>

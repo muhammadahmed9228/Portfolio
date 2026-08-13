@@ -13,12 +13,12 @@ const AdminHeader = ({ activeTab }) => {
   };
 
   return (
-    <header className="h-16 bg-slate-900/50 backdrop-blur-md border-b border-slate-800 px-6 flex items-center justify-between">
+    <header className="sticky top-0 z-20 min-h-16 bg-slate-900/70 backdrop-blur-md border-b border-slate-800 px-4 sm:px-6 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
       {/* Title */}
-      <h1 className="text-lg font-bold text-white capitalize">{titleMap[activeTab] || 'Dashboard'}</h1>
+      <h1 className="min-w-0 text-base sm:text-lg font-bold text-white capitalize break-words">{titleMap[activeTab] || 'Dashboard'}</h1>
 
       {/* Right Side Actions */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 min-w-0 w-full sm:w-auto">
         {/* View Live Portfolio Link */}
         <a
           href="/"
@@ -31,11 +31,11 @@ const AdminHeader = ({ activeTab }) => {
         </a>
 
         {/* User Pill */}
-        <div className="flex items-center gap-2.5 px-3 py-1.5 bg-slate-800/80 border border-slate-700/80 rounded-xl">
+        <div className="flex items-center gap-2.5 px-3 py-1.5 bg-slate-800/80 border border-slate-700/80 rounded-xl min-w-0 max-w-[12rem] sm:max-w-none">
           <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
             <User className="w-4 h-4" />
           </div>
-          <span className="text-xs font-medium text-slate-200">
+          <span className="text-xs font-medium text-slate-200 truncate">
             {admin?.email || 'Admin User'}
           </span>
         </div>

@@ -44,13 +44,13 @@ const ProfileImageCard = () => {
   return (
     <div className="relative group max-w-sm mx-auto lg:max-w-none">
       {/* Ambient Gradient Glow behind photo */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500 pointer-events-none" />
+      <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-sky-400 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500 pointer-events-none" />
 
       {/* Main Card Container */}
-      <div className="relative bg-slate-900 border border-slate-800 rounded-3xl p-3 shadow-2xl overflow-hidden">
+      <div className="relative bg-[#0a1520] border border-[#223244] rounded-3xl p-3 shadow-2xl overflow-hidden">
         
         {/* Photo Container */}
-        <div className="relative h-[380px] sm:h-[420px] w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800/80">
+        <div className="relative h-[380px] sm:h-[420px] w-full rounded-2xl overflow-hidden bg-[#07111c] border border-[#223244]/80">
           <img
            src={profileImg} // Profile pic
             alt={PROFILE.name}
@@ -58,29 +58,29 @@ const ProfileImageCard = () => {
           />
 
           {/* Dark Gradient Overlay at the bottom of image */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#07111c] via-[#07111c]/20 to-transparent" />
 
           {/* Floating Status Badge (Top-Right) */}
-          <div className="absolute top-3 right-3 px-3 py-1 bg-slate-950/80 backdrop-blur-md border border-slate-800 rounded-full flex items-center gap-2 text-[11px] font-medium text-emerald-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="absolute top-3 right-3 px-3 py-1 bg-[#07111c]/80 backdrop-blur-md border border-[#223244] rounded-full flex items-center gap-2 text-[11px] font-medium text-amber-300">
+            <span className="w-2 h-2 rounded-full bg-amber-300 animate-pulse" />
             <span>Open for Hire</span>
           </div>
 
           {/* Overlay Text Content (Bottom of Image) */}
-          <div className="absolute bottom-4 left-4 right-4 p-3 bg-slate-900/80 backdrop-blur-md border border-slate-800/80 rounded-xl space-y-1">
+          <div className="absolute bottom-4 left-4 right-4 p-3 bg-[#0a1520]/82 backdrop-blur-md border border-[#223244]/80 rounded-xl space-y-1">
             <div className="flex items-center justify-between">
               <h3 className="font-bold text-white text-base">{PROFILE.name}</h3>
-              <div className="p-1 bg-emerald-500/10 text-emerald-400 rounded-md">
+              <div className="p-1 bg-amber-500/10 text-amber-300 rounded-md">
                 <Code2 className="w-4 h-4" />
               </div>
             </div>
-            <p className="text-slate-400 text-xs font-medium">{PROFILE.title}</p>
+            <p className="text-slate-300/80 text-xs font-medium">{PROFILE.title}</p>
           </div>
         </div>
 
         {/* Bottom Tech Pills Row */}
         <div className="mt-3 px-2 py-1 flex items-center justify-between text-xs text-slate-400 font-mono">
-          <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
+          <span className="flex items-center gap-1.5 text-amber-300 font-medium">
             <Sparkles className="w-3.5 h-3.5" />
             MERN Stack
           </span>

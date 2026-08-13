@@ -14,7 +14,7 @@ const PublicExperienceTimeline = () => {
   }, [dispatch]);
 
   return (
-    <section id="experience" className="py-20 bg-slate-900/30 border-t border-slate-800/80">
+    <section id="experience" className="py-20 bg-[#091520]/70 border-t border-[#223244]/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badgeText="Work History"
@@ -24,7 +24,7 @@ const PublicExperienceTimeline = () => {
 
         {isLoading ? (
           <div className="py-12 flex flex-col items-center justify-center text-slate-400">
-            <Loader2 className="w-8 h-8 animate-spin text-emerald-500 mb-2" />
+            <Loader2 className="w-8 h-8 animate-spin text-amber-300 mb-2" />
             <p className="text-sm">Loading experience timeline...</p>
           </div>
         ) : experiences.length === 0 ? (

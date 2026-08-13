@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import AdminSidebar from './admin/components/AdminSidebar';
 import AdminHeader from './admin/components/AdminHeader';
 import StatCard from '../components/StatCard';
@@ -6,21 +7,34 @@ import { FolderGit2, Briefcase, Mail, ShieldAlert } from 'lucide-react';
 import ProjectsTab from './admin/tabs/ProjectsTab'
 import ExperiencesTab from './admin/tabs/ExperiencesTab';
 import InboxTab from './admin/tabs/InboxTab';
+import { fetchProjects } from '../features/projects/projectSlice';
+import { fetchExperiences } from '../features/experiences/experienceSlice';
+import { fetchMessages } from '../features/contacts/contactSlice';
 
 //This assembles the sidebar, header, stat counters, and tab views into a layout.
 
 const AdminDashboard = () => {
+  const dispatch = useDispatch();
   const [activeTab, setActiveTab] = useState('overview');
 
-  // Placeholder counters (will connect to Redux store states)
+  const { projects } = useSelector((state) => state.projects);
+  const { experiences } = useSelector((state) => state.experiences);
+  const { unreadCount } = useSelector((state) => state.contacts);
+
+  useEffect(() => {
+    dispatch(fetchProjects());
+    dispatch(fetchExperiences());
+    dispatch(fetchMessages());
+  }, [dispatch]);
+
   const stats = {
-    projectsCount: 6,
-    experiencesCount: 2,
-    unreadMessages: 3,
+    projectsCount: projects.length,
+    experiencesCount: experiences.length,
+    unreadMessages: unreadCount,
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex text-slate-100">
+    <div className="min-h-screen bg-slate-950 flex flex-col md:flex-row text-slate-100">
       {/* Sidebar Navigation */}
       <AdminSidebar 
         activeTab={activeTab} 
@@ -34,7 +48,7 @@ const AdminDashboard = () => {
         <AdminHeader activeTab={activeTab} />
 
         {/* Dynamic Workspace Content */}
-        <main className="flex-1 p-6 overflow-y-auto custom-scrollbar space-y-6">
+        <main className="flex-1 p-4 sm:p-6 overflow-y-auto custom-scrollbar space-y-6">
           {/* Top Quick Stats Grid (Visible on Overview & Projects) */}
           {activeTab === 'overview' && (
             <div className="space-y-6">

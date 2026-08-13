@@ -26,10 +26,10 @@ const AdminSidebar = ({ activeTab, setActiveTab, unreadCount = 0 }) => {
   ];
 
   return (
-    <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col justify-between hidden md:flex">
+    <aside className="w-full md:w-72 bg-slate-900 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col justify-between md:min-h-screen">
       {/* Brand Header */}
       <div>
-        <div className="h-16 flex items-center gap-3 px-6 border-b border-slate-800">
+        <div className="h-16 flex items-center gap-3 px-4 sm:px-6 border-b border-slate-800">
           <div className="p-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-lg">
             <Code2 className="w-5 h-5" />
           </div>
@@ -40,7 +40,7 @@ const AdminSidebar = ({ activeTab, setActiveTab, unreadCount = 0 }) => {
         </div>
 
         {/* Navigation Items */}
-        <nav className="p-4 space-y-1.5">
+        <nav className="p-3 sm:p-4 flex md:block gap-2 md:space-y-1.5 overflow-x-auto md:overflow-visible">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.id;
@@ -48,7 +48,7 @@ const AdminSidebar = ({ activeTab, setActiveTab, unreadCount = 0 }) => {
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium text-sm transition-all cursor-pointer ${
+                className={`flex shrink-0 md:w-full items-center justify-between px-4 py-3 rounded-xl font-medium text-sm transition-all cursor-pointer ${
                   isActive
                     ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-sm'
                     : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
@@ -70,7 +70,7 @@ const AdminSidebar = ({ activeTab, setActiveTab, unreadCount = 0 }) => {
       </div>
 
       {/* Logout Action */}
-      <div className="p-4 border-t border-slate-800">
+      <div className="p-3 sm:p-4 border-t border-slate-800">
         <button
           onClick={() => dispatch(logoutAdmin())}
           className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 border border-transparent hover:border-rose-500/20 transition-all cursor-pointer"

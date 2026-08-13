@@ -4,7 +4,7 @@ const SectionHeader = ({ title, subtitle, badgeText }) => {
   return (
     <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
       {badgeText && (
-        <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full">
+        <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] bg-amber-500/10 text-amber-300 border border-amber-500/20 rounded-full">
           {badgeText}
         </span>
       )}
@@ -12,7 +12,7 @@ const SectionHeader = ({ title, subtitle, badgeText }) => {
         {title}
       </h2>
       {subtitle && (
-        <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-300/85 text-sm sm:text-base leading-relaxed">
           {subtitle}
         </p>
       )}

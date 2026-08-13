@@ -94,14 +94,14 @@ const ProjectsTab = () => {
   return (
     <div className="space-y-6">
       {/* Tab Header Action Bar */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-slate-900 p-6 border border-slate-800 rounded-2xl">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-slate-900 p-4 sm:p-6 border border-slate-800 rounded-2xl">
         <div>
-          <h2 className="text-xl font-bold text-white">Project Showcase Manager</h2>
+          <h2 className="text-lg sm:text-xl font-bold text-white">Project Showcase Manager</h2>
           <p className="text-slate-400 text-sm mt-1">Add, update, or remove portfolio projects displayed on your site.</p>
         </div>
         <button
           onClick={handleOpenCreateModal}
-          className="flex items-center gap-2 px-4 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm rounded-xl transition-all cursor-pointer shadow-lg shadow-emerald-500/10"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm rounded-xl transition-all cursor-pointer shadow-lg shadow-emerald-500/10"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Project</span>
@@ -121,7 +121,86 @@ const ProjectsTab = () => {
             <p className="text-xs mt-1">Click "Add New Project" above to create your first portfolio entry.</p>
           </div>
         ) : (
-          <div className="overflow-x-auto">
+          <>
+            <div className="grid gap-4 p-4 xl:hidden">
+              {projects.map((project) => (
+                <div key={project._id} className="p-4 sm:p-5 bg-slate-950/60 border border-slate-800 rounded-2xl space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-3 min-w-0">
+                    {project.image?.url ? (
+                      <img
+                        src={project.image.url}
+                        alt={project.title}
+                        className="w-full sm:w-16 h-40 sm:h-16 rounded-xl object-cover border border-slate-700 shrink-0"
+                      />
+                    ) : (
+                      <div className="w-full sm:w-16 h-40 sm:h-16 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 border border-slate-700 shrink-0">
+                        <ImageIcon className="w-5 h-5" />
+                      </div>
+                    )}
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                        <div className="min-w-0">
+                          <div className="font-semibold text-white break-words">{project.title}</div>
+                          <p className="text-xs text-slate-400 line-clamp-3 mt-1">{project.description}</p>
+                        </div>
+                        {project.featured && (
+                          <span className="px-2 py-0.5 text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full font-medium shrink-0">
+                            Featured
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-2.5 py-1 text-xs bg-slate-800 border border-slate-700 text-slate-300 rounded-lg">
+                      {project.category}
+                    </span>
+                    {project.techStack.slice(0, 2).map((tech, i) => (
+                      <span key={i} className="px-2 py-0.5 text-[11px] bg-slate-800/80 text-emerald-400 rounded">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.techStack.length > 2 && (
+                      <span className="text-[11px] text-slate-500">+{project.techStack.length - 2} more</span>
+                    )}
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div className="flex items-center gap-3 text-slate-400">
+                      {project.githubLink && (
+                        <a href={project.githubLink} target="_blank" rel="noreferrer" className="hover:text-white">
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                      {project.liveDemoLink && (
+                        <a href={project.liveDemoLink} target="_blank" rel="noreferrer" className="hover:text-emerald-400">
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+
+                    <div className="flex items-center justify-end gap-2">
+                      <button
+                        onClick={() => handleOpenEditModal(project)}
+                        className="p-2 text-slate-400 hover:text-emerald-400 hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+                      >
+                        <Pencil className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(project._id)}
+                        className="p-2 text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 rounded-lg transition-colors cursor-pointer"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="hidden xl:block overflow-x-auto">
             <table className="w-full text-left text-sm text-slate-300">
               <thead className="bg-slate-950 text-xs uppercase text-slate-400 border-b border-slate-800">
                 <tr>
@@ -191,7 +270,7 @@ const ProjectsTab = () => {
                       <div className="flex items-center gap-2 text-slate-400">
                         {project.githubLink && (
                           <a href={project.githubLink} target="_blank" rel="noreferrer" className="hover:text-white">
-                           
+                            <ExternalLink className="w-4 h-4" />
                           </a>
                         )}
                         {project.liveDemoLink && (
@@ -223,7 +302,8 @@ const ProjectsTab = () => {
                 ))}
               </tbody>
             </table>
-          </div>
+            </div>
+          </>
         )}
       </div>
 

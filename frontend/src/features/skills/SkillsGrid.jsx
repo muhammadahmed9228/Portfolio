@@ -27,7 +27,7 @@ const SkillsGrid = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-slate-900/40 border-y border-slate-800/80">
+    <section id="skills" className="py-20 bg-[#091520]/72 border-y border-[#223244]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badgeText="Capabilities"
@@ -46,8 +46,8 @@ const SkillsGrid = () => {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/10'
-                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                    ? 'bg-amber-300 text-slate-950 shadow-md shadow-amber-500/10'
+                    : 'bg-[#0d1824] text-slate-300 hover:text-white border border-[#223244]'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -62,9 +62,9 @@ const SkillsGrid = () => {
           {getFilteredSkills().map((skill, index) => (
             <div
               key={index}
-              className="p-4 bg-slate-900/80 border border-slate-800 rounded-xl text-center hover:border-emerald-500/30 transition-all group"
+              className="p-4 bg-[#0d1824]/90 border border-[#223244] rounded-xl text-center hover:border-amber-500/30 transition-all group"
             >
-              <p className="text-sm font-semibold text-slate-300 group-hover:text-emerald-400 transition-colors">
+              <p className="text-sm font-semibold text-slate-200 group-hover:text-amber-300 transition-colors">
                 {skill}
               </p>
             </div>

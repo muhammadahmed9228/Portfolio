@@ -59,14 +59,14 @@ const PublicContactForm = () => {
         {/* Form Column */}
         <div className="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8">
           {isSuccess && (
-            <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-3 text-emerald-400 text-sm">
+            <div className="mb-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center gap-3 text-amber-300 text-sm">
               <CheckCircle2 className="w-5 h-5 shrink-0" />
               <span>Thank you! Your message has been sent successfully. I will get back to you soon.</span>
             </div>
           )}
 
           {isError && (
-            <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center gap-3 text-rose-400 text-sm">
+            <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center gap-3 text-rose-300 text-sm">
               <AlertCircle className="w-5 h-5 shrink-0" />
               <span>{message || 'Failed to send message. Please try again or email directly.'}</span>
             </div>
@@ -82,8 +82,8 @@ const PublicContactForm = () => {
                   required
                   value={name}
                   onChange={handleChange}
-                  placeholder="John Doe"
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-emerald-500 transition-colors"
+                  placeholder="Hanan Ali"
+                  className="w-full px-4 py-3 bg-[#07111c] border border-[#223244] rounded-xl text-white text-sm focus:outline-none focus:border-amber-300 transition-colors"
                 />
               </div>
 
@@ -95,8 +95,8 @@ const PublicContactForm = () => {
                   required
                   value={email}
                   onChange={handleChange}
-                  placeholder="john@example.com"
-                  className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-emerald-500 transition-colors"
+                  placeholder="xyz@gmail.com"
+                  className="w-full px-4 py-3 bg-[#07111c] border border-[#223244] rounded-xl text-white text-sm focus:outline-none focus:border-amber-300 transition-colors"
                 />
               </div>
             </div>
@@ -108,8 +108,8 @@ const PublicContactForm = () => {
                 name="subject"
                 value={subject}
                 onChange={handleChange}
-                placeholder="Internship Opportunity / Project Inquiry"
-                className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-emerald-500 transition-colors"
+                placeholder="Job Opportunity / Internship Opportunity / Project Inquiry"
+                className="w-full px-4 py-3 bg-[#07111c] border border-[#223244] rounded-xl text-white text-sm focus:outline-none focus:border-amber-300 transition-colors"
               />
             </div>
 
@@ -122,14 +122,14 @@ const PublicContactForm = () => {
                 value={msgContent}
                 onChange={handleChange}
                 placeholder="Hi! I came across your portfolio and would love to discuss..."
-                className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+                className="w-full px-4 py-3 bg-[#07111c] border border-[#223244] rounded-xl text-white text-sm focus:outline-none focus:border-amber-300 transition-colors resize-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3.5 px-6 bg-emerald-500 hover:bg-emerald-400 disabled:bg-slate-800 disabled:text-slate-500 text-slate-950 font-bold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed shadow-lg shadow-emerald-500/10 text-sm"
+              className="w-full py-3.5 px-6 bg-amber-300 hover:bg-amber-200 disabled:bg-[#182533] disabled:text-slate-500 text-slate-950 font-bold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed shadow-lg shadow-amber-500/10 text-sm"
             >
               {isLoading ? (
                 <>

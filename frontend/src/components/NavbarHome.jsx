@@ -16,15 +16,15 @@ const NavbarHome = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <nav className="sticky top-0 z-40 bg-[#07111c]/78 backdrop-blur-xl border-b border-[#223244]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <div className="p-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl group-hover:scale-105 transition-transform">
+          <div className="p-2 bg-amber-500/10 text-amber-300 border border-amber-500/20 rounded-xl group-hover:scale-105 transition-transform">
             <Code2 className="w-5 h-5" />
           </div>
           <span className="font-bold text-lg text-white tracking-tight">
-            Personal<span className="text-emerald-400">Portfolio</span>
+            Personal<span className="text-amber-300">Portfolio</span>
           </span>
         </a>
 
@@ -34,7 +34,7 @@ const NavbarHome = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-400 hover:text-emerald-400 transition-colors"
+              className="text-sm font-medium text-slate-300 hover:text-amber-300 transition-colors"
             >
               {link.name}
             </a>
@@ -45,7 +45,7 @@ const NavbarHome = () => {
           {/* Admin Link */}
           <Link
             to="/admin/login"
-            className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+            className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-[#182533] transition-colors"
             title="Admin Portal"
           >
             <Lock className="w-4 h-4" />
@@ -56,7 +56,7 @@ const NavbarHome = () => {
             href={resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2 bg-amber-300 hover:bg-amber-200 text-slate-950 text-xs font-bold rounded-xl shadow-lg shadow-amber-500/10 transition-all cursor-pointer"
           >
             <FileText className="w-4 h-4" />
             <span>Resume</span>
@@ -78,13 +78,13 @@ const NavbarHome = () => {
 
       {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+        <div className="md:hidden bg-[#091520] border-b border-[#223244] px-4 pt-2 pb-6 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400"
+              className="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-[#182533] hover:text-amber-300"
             >
               {link.name}
             </a>
@@ -95,7 +95,7 @@ const NavbarHome = () => {
               target="_blank"
               download="Muhammad_Ahmed-CV.pdf"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-emerald-500 text-slate-950 font-bold rounded-xl text-sm"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-amber-300 text-slate-950 font-bold rounded-xl text-sm"
             >
               <FileText className="w-4 h-4" />
               <span>Download Resume</span>

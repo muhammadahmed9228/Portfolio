@@ -6,7 +6,9 @@ html {
 }
 
 body {
-  background-color: #0f172a; /* Deep slate dark background */
+  min-height: 100vh;
+  background-color: #07111c;
+  background-image: radial-gradient(circle at top, rgba(245, 158, 11, 0.08), transparent 28%), radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.08), transparent 24%), linear-gradient(180deg, #07111c 0%, #081421 100%);
   color: #f8fafc;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: Inter, "Segoe UI", Roboto, sans-serif;
 }
